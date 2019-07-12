@@ -96,12 +96,20 @@ public class CalcController implements Initializable {
 			data = Double.parseDouble(display.getText());
 			operator = 2;
 			display.setText("");
+		} else if (event.getSource() == multiply) {
+			data = Double.parseDouble(display.getText());
+			operator = 3;
+			display.setText("");
+		} else if (event.getSource() == subtract) {
+			data = Double.parseDouble(display.getText());
+			operator = 4;
+			display.setText("");
 		} else if (event.getSource() == equals) {
 			double secondOperand = Double.parseDouble(display.getText());
 			// switch statement is used for variation of operators
 			switch (operator) {
 			case 1:
-				double ans = addition(data, secondOperand);
+				double ans = add(data, secondOperand);
 				// if/else statements are created to ensure that a double value is displayed
 				// only when necessary
 				if (ans % 1 == 0) {
@@ -114,7 +122,7 @@ public class CalcController implements Initializable {
 			case 2:
 				ans = 0;
 				try {
-					ans = division(data, secondOperand);
+					ans = divide(data, secondOperand);
 					if (ans % 1 == 0.00) {
 						display.setText(String.valueOf((int) ans));
 					} else {
@@ -124,23 +132,43 @@ public class CalcController implements Initializable {
 					display.setText("Error");
 				}
 				break;
+			case 3:
+				ans = 0;
+
+				ans = multiply(data, secondOperand);
+				if (ans % 1 == 0.00) {
+					display.setText(String.valueOf((int) ans));
+				} else {
+					display.setText(String.valueOf(ans));
+				}
+				break;
+			case 4:
+				ans = 0;
+
+				ans = subtract(data, secondOperand);
+				if (ans % 1 == 0.00) {
+					display.setText(String.valueOf((int) ans));
+				} else {
+					display.setText(String.valueOf(ans));
+				}
+				break;
 			}
 		}
 	}
 
-	private static double addition(double num1, double num2) {
+	private static double add(double num1, double num2) {
 		return num1 + num2;
 	}
 
-	private static double subtraction(double num1, double num2) {
-		return num1 + num2;
+	private static double subtract(double num1, double num2) {
+		return num1 - num2;
 	}
 
-	private static double division(double num1, double num2) {
+	private static double divide(double num1, double num2) {
 		return num1 / num2;
 	}
 
-	private static double multiplication(double num1, double num2) {
+	private static double multiply(double num1, double num2) {
 		return num1 * num2;
 	}
 
