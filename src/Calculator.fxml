@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="360.0" style="-fx-background-color: LightBlue;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CalcController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="360.0" style="-fx-background-color: AliceBlue;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CalcController">
    <children>
       <GridPane layoutX="10.0" layoutY="134.0" prefHeight="396.0" prefWidth="260.0">
         <columnConstraints>
@@ -23,69 +23,69 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="seven" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" text="7">
+            <Button fx:id="seven" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="7">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="eight" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" text="8" GridPane.columnIndex="1">
+            <Button fx:id="eight" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="8" GridPane.columnIndex="1">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="nine" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" text="9" GridPane.columnIndex="2">
+            <Button fx:id="nine" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="9" GridPane.columnIndex="2">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="one" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" text="1" GridPane.rowIndex="2">
+            <Button fx:id="one" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="1" GridPane.rowIndex="2">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="two" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="two" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="2" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="three" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button fx:id="three" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="170.0" prefWidth="87.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="3" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="four" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" text="4" GridPane.rowIndex="1">
+            <Button fx:id="four" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="4" GridPane.rowIndex="1">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="five" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="five" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="six" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button fx:id="six" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="clear" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" text="CLEAR" GridPane.rowIndex="3">
+            <Button fx:id="clear" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="CLEAR" GridPane.rowIndex="3">
                <font>
-                  <Font name="System Bold" size="19.0" />
+                  <Font size="19.0" />
                </font>
             </Button>
-            <Button fx:id="zero" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button fx:id="zero" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="equals" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" text="=" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <Button fx:id="equals" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="=" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
          </children>
       </GridPane>
-      <TextField fx:id="display" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="14.0" prefHeight="110.0" prefWidth="340.0" style="-fx-background-radius: 10;">
+      <TextField fx:id="display" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="14.0" prefHeight="110.0" prefWidth="340.0" promptText="0" style="-fx-border-color: slateGray; -fx-border-width: 2;">
          <font>
             <Font size="38.0" />
          </font>
@@ -101,24 +101,24 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="plus" minWidth="80.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="173.0" prefWidth="44.0" text="+" GridPane.rowIndex="3">
+            <Button fx:id="plus" minWidth="80.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="149.0" prefWidth="80.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="+" GridPane.rowIndex="3">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="divide" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="290.0" prefWidth="95.0" text="÷">
+            <Button fx:id="divide" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="290.0" prefWidth="95.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="÷">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="multiply" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="137.0" prefWidth="128.0" text="×" GridPane.rowIndex="1">
+            <Button fx:id="multiply" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="137.0" prefWidth="128.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="×" GridPane.rowIndex="1">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="subtract" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="122.0" prefWidth="107.0" text="−" GridPane.rowIndex="2">
+            <Button fx:id="subtract" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="183.0" prefWidth="80.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="−" GridPane.rowIndex="2">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font size="30.0" />
                </font>
             </Button>
          </children>
