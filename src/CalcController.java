@@ -151,7 +151,6 @@ public class CalcController implements Initializable {
 				} else {
 					display.setText(String.valueOf(ans));
 				}
-
 				break;
 			}
 		}
