@@ -70,7 +70,7 @@
             </Button>
             <Button fx:id="clear" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="118.0" prefWidth="103.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="CLEAR" GridPane.rowIndex="3">
                <font>
-                  <Font size="19.0" />
+                  <Font size="17.0" />
                </font>
             </Button>
             <Button fx:id="zero" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="182.0" prefWidth="158.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">

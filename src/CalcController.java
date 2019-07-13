@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+
 public class CalcController implements Initializable {
 	// data and operator variables are initialized
 	double data = 0;
@@ -67,25 +68,25 @@ public class CalcController implements Initializable {
 	@FXML
 	void handleButtonAction(ActionEvent event) {
 		if (event.getSource() == one) {
-			display.setText(display.getText() + "1");
+			display.setText(display.getText() + "1.0");
 		} else if (event.getSource() == two) {
-			display.setText(display.getText() + "2");
+			display.setText(display.getText() + "2.0");
 		} else if (event.getSource() == three) {
-			display.setText(display.getText() + "3");
+			display.setText(display.getText() + "3.0");
 		} else if (event.getSource() == four) {
-			display.setText(display.getText() + "4");
+			display.setText(display.getText() + "4.0");
 		} else if (event.getSource() == five) {
-			display.setText(display.getText() + "5");
+			display.setText(display.getText() + "5.0");
 		} else if (event.getSource() == six) {
-			display.setText(display.getText() + "6");
+			display.setText(display.getText() + "6.0");
 		} else if (event.getSource() == seven) {
-			display.setText(display.getText() + "7");
+			display.setText(display.getText() + "7.0");
 		} else if (event.getSource() == eight) {
-			display.setText(display.getText() + "8");
+			display.setText(display.getText() + "8.0");
 		} else if (event.getSource() == nine) {
-			display.setText(display.getText() + "9");
+			display.setText(display.getText() + "9.0");
 		} else if (event.getSource() == zero) {
-			display.setText(display.getText() + "0");
+			display.setText(display.getText() + "0.0");
 		} else if (event.getSource() == clear) {
 			display.setText(" ");
 		} else if (event.getSource() == plus) {
@@ -112,7 +113,7 @@ public class CalcController implements Initializable {
 				double ans = add(data, secondOperand);
 				// if/else statements are created to ensure that a double value is displayed
 				// only when necessary
-				if (ans % 1 == 0) {
+				if (ans % 1.0 == 0.0) {
 					display.setText(String.valueOf((int) ans));
 				} else {
 					display.setText(String.valueOf(ans));
@@ -121,22 +122,18 @@ public class CalcController implements Initializable {
 
 			case 2:
 				ans = 0;
-				try {
-					ans = divide(data, secondOperand);
-					if (ans % 1 == 0.00) {
-						display.setText(String.valueOf((int) ans));
-					} else {
-						display.setText(String.valueOf(ans));
-					}
-				} catch (Exception e) {
-					display.setText("Error");
+				ans = divide(data, secondOperand);
+				if (ans % 1.0 == 0.0) {
+					display.setText(String.valueOf((int) ans));
+				} else {
+					display.setText(String.valueOf(ans));
 				}
 				break;
 			case 3:
 				ans = 0;
 
 				ans = multiply(data, secondOperand);
-				if (ans % 1 == 0.00) {
+				if (ans % 1.0 == 0.0) {
 					display.setText(String.valueOf((int) ans));
 				} else {
 					display.setText(String.valueOf(ans));
@@ -146,7 +143,7 @@ public class CalcController implements Initializable {
 				ans = 0;
 
 				ans = subtract(data, secondOperand);
-				if (ans % 1 == 0.00) {
+				if (ans % 1.0 == 0.0) {
 					display.setText(String.valueOf((int) ans));
 				} else {
 					display.setText(String.valueOf(ans));
