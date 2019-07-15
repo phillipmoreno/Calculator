@@ -1,4 +1,5 @@
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -6,12 +7,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-
 public class CalcController implements Initializable {
 	// data and operator variables are initialized
 	double data = 0;
 	int operator = -1;
 
+	DecimalFormat df = new DecimalFormat("0.00000");
 	// Button objects are created
 	@FXML
 	private Button one;
@@ -68,27 +69,27 @@ public class CalcController implements Initializable {
 	@FXML
 	void handleButtonAction(ActionEvent event) {
 		if (event.getSource() == one) {
-			display.setText("1");
+			display.setText(removeZero(display.getText() + "1"));
 		} else if (event.getSource() == two) {
-			display.setText("2");
+			display.setText(removeZero(display.getText() + "2"));
 		} else if (event.getSource() == three) {
-			display.setText("3");
+			display.setText(removeZero(display.getText() + "3"));
 		} else if (event.getSource() == four) {
-			display.setText("4");
+			display.setText(removeZero(display.getText() + "4"));
 		} else if (event.getSource() == five) {
-			display.setText("5");
+			display.setText(removeZero(display.getText() + "5"));
 		} else if (event.getSource() == six) {
-			display.setText("6");
+			display.setText(removeZero(display.getText() + "6"));
 		} else if (event.getSource() == seven) {
-			display.setText("7");
+			display.setText(removeZero(display.getText() + "7"));
 		} else if (event.getSource() == eight) {
-			display.setText("8");
+			display.setText(removeZero(display.getText() + "8"));
 		} else if (event.getSource() == nine) {
-			display.setText("9");
+			display.setText(removeZero(display.getText() + "9"));
 		} else if (event.getSource() == zero) {
-			display.setText("0");
+			display.setText(removeZero(display.getText() + "0"));
 		} else if (event.getSource() == clear) {
-			display.setText(" ");
+			display.setText("0");
 		} else if (event.getSource() == plus) {
 			data = Double.parseDouble(display.getText());
 			operator = 1;
@@ -107,16 +108,16 @@ public class CalcController implements Initializable {
 			display.setText("");
 		} else if (event.getSource() == equals) {
 			double secondOperand = Double.parseDouble(display.getText());
-			// switch statement is used for variation of operators
+			// switch statement used for variation of operators
 			switch (operator) {
 			case 1:
 				double ans = add(data, secondOperand);
-				// if/else statements are created to ensure that a double value is displayed
-				// only when necessary
+				// if statements are used to ensure that a decimal value is displayed when
+				// necessary
 				if (ans % 1.0 == 0.0) {
 					display.setText(String.valueOf((int) ans));
 				} else {
-					display.setText(String.valueOf(ans));
+					display.setText(String.valueOf((double) Math.round(ans * 100000000000d) / 100000000000d));
 				}
 				break;
 
@@ -126,7 +127,8 @@ public class CalcController implements Initializable {
 				if (ans % 1.0 == 0.0) {
 					display.setText(String.valueOf((int) ans));
 				} else {
-					display.setText(String.valueOf(ans));
+
+					display.setText(String.valueOf((double) Math.round(ans * 100000000000d) / 100000000000d));
 				}
 				break;
 			case 3:
@@ -136,17 +138,18 @@ public class CalcController implements Initializable {
 				if (ans % 1.0 == 0.0) {
 					display.setText(String.valueOf((int) ans));
 				} else {
-					display.setText(String.valueOf(ans));
+					display.setText(String.valueOf((double) Math.round(ans * 100000000000d) / 100000000000d));
 				}
 				break;
 			case 4:
 				ans = 0;
 
 				ans = subtract(data, secondOperand);
+
 				if (ans % 1.0 == 0.0) {
 					display.setText(String.valueOf((int) ans));
 				} else {
-					display.setText(String.valueOf(ans));
+					display.setText(String.valueOf((double) Math.round(ans * 100000000000d) / 100000000000d));
 				}
 				break;
 			}
@@ -167,6 +170,17 @@ public class CalcController implements Initializable {
 
 	private static double multiply(double num1, double num2) {
 		return num1 * num2;
+	}
+
+	private String removeZero(String aString) {
+		String bString = aString;
+		char firstChar = aString.charAt(0);
+		if (firstChar == '0') {
+			aString = aString.substring(1);
+			return aString;
+		} else
+			return bString;
+
 	}
 
 	@Override
