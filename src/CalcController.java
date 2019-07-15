@@ -65,6 +65,18 @@ public class CalcController implements Initializable {
 	@FXML
 	private Button subtract;
 
+	@FXML
+	private Button decimal;
+
+	@FXML
+	private Button negate;
+
+	@FXML
+	private Button squared;
+
+	@FXML
+	private Button backspace;
+
 	// Textfield object is created
 	@FXML
 	private TextField display;
@@ -94,6 +106,21 @@ public class CalcController implements Initializable {
 			display.setText(removeZero(display.getText() + "0"));
 		} else if (event.getSource() == clear) {
 			display.setText("0");
+		} else if (event.getSource() == decimal) {
+			display.setText(display.getText() + ".");
+		} else if (event.getSource() == backspace) {
+			display.setText(removeLastCharacter(display.getText()));
+		} else if (event.getSource() == squared) {
+			data = Double.parseDouble(display.getText());
+			double squaredNum = data * data;
+			if (squaredNum % 1.00 == 0.00)
+				display.setText(String.valueOf((int) squaredNum));
+			else
+				display.setText(String.valueOf((double) Math.round(squaredNum * 100000000000d) / 100000000000d));
+		} else if (event.getSource() == negate) {
+			data = Double.parseDouble(display.getText());
+			data = data * -1;
+			display.setText(String.valueOf(data));
 		} else if (event.getSource() == plus) {
 			data = Double.parseDouble(display.getText());
 			operator = 1;
@@ -163,7 +190,7 @@ public class CalcController implements Initializable {
 	KeyCombination shiftPlus = new KeyCodeCombination(KeyCode.EQUALS, KeyCodeCombination.SHIFT_DOWN);
 	KeyCombination eightKey = new KeyCodeCombination(KeyCode.DIGIT8);
 	KeyCombination shiftStar = new KeyCodeCombination(KeyCode.DIGIT8, KeyCodeCombination.SHIFT_DOWN);
-	
+
 	@FXML
 	public void keyPressed(KeyEvent e) {
 		if (e.getCode().equals(KeyCode.DIGIT1)) {
@@ -197,11 +224,11 @@ public class CalcController implements Initializable {
 		} else if (e.getCode() == KeyCode.ENTER || e.getCode() == KeyCode.EQUALS) {
 			equals.fire();
 		} else if (e.getCode() == KeyCode.BACK_SPACE) {
-			display.setText(removeLastCharacter(display.getText()));
-		}else if(e.getCode() == KeyCode.C) {
+			backspace.fire();
+		} else if (e.getCode() == KeyCode.C) {
 			clear.fire();
-		}else if(e.getCode() == KeyCode.PERIOD) {
-			display.setText(display.getText() + ".");
+		} else if (e.getCode() == KeyCode.PERIOD) {
+			decimal.fire();
 		}
 	}
 
