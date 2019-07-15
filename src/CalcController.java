@@ -7,6 +7,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
 
 public class CalcController implements Initializable {
@@ -158,6 +160,10 @@ public class CalcController implements Initializable {
 		}
 	}
 
+	KeyCombination shiftPlus = new KeyCodeCombination(KeyCode.EQUALS, KeyCodeCombination.SHIFT_DOWN);
+	KeyCombination eightKey = new KeyCodeCombination(KeyCode.DIGIT8);
+	KeyCombination shiftStar = new KeyCodeCombination(KeyCode.DIGIT8, KeyCodeCombination.SHIFT_DOWN);
+	
 	@FXML
 	public void keyPressed(KeyEvent e) {
 		if (e.getCode().equals(KeyCode.DIGIT1)) {
@@ -174,24 +180,26 @@ public class CalcController implements Initializable {
 			display.setText(removeZero(display.getText() + "6"));
 		} else if (e.getCode() == KeyCode.DIGIT7) {
 			display.setText(removeZero(display.getText() + "7"));
-		} else if (e.getCode() == KeyCode.DIGIT8) {
+		} else if (eightKey.match(e)) {
 			display.setText(removeZero(display.getText() + "8"));
 		} else if (e.getCode() == KeyCode.DIGIT9) {
 			display.setText(removeZero(display.getText() + "9"));
 		} else if (e.getCode() == KeyCode.DIGIT0) {
 			display.setText(removeZero(display.getText() + "0"));
-		} else if (e.getCode() == KeyCode.PLUS) {
+		} else if (e.getCode() == KeyCode.PLUS || shiftPlus.match(e)) {
 			plus.fire();
 		} else if (e.getCode() == KeyCode.MINUS) {
 			subtract.fire();
-		} else if (e.getCode() == KeyCode.STAR) {
+		} else if (e.getCode() == KeyCode.MULTIPLY || shiftStar.match(e)) {
 			multiply.fire();
 		} else if (e.getCode() == KeyCode.SLASH) {
 			divide.fire();
-		} else if (e.getCode() == KeyCode.ENTER) {
+		} else if (e.getCode() == KeyCode.ENTER || e.getCode() == KeyCode.EQUALS) {
 			equals.fire();
 		} else if (e.getCode() == KeyCode.BACK_SPACE) {
 			display.setText(removeLastCharacter(display.getText()));
+		}else if(e.getCode() == KeyCode.C) {
+			clear.fire();
 		}
 	}
 
