@@ -200,6 +200,8 @@ public class CalcController implements Initializable {
 			display.setText(removeLastCharacter(display.getText()));
 		}else if(e.getCode() == KeyCode.C) {
 			clear.fire();
+		}else if(e.getCode() == KeyCode.PERIOD) {
+			display.setText(display.getText() + ".");
 		}
 	}
 
