@@ -1,18 +1,19 @@
 import java.net.URL;
-import java.text.DecimalFormat;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 public class CalcController implements Initializable {
 	// data and operator variables are initialized
 	double data = 0;
 	int operator = -1;
 
-	DecimalFormat df = new DecimalFormat("0.00000");
 	// Button objects are created
 	@FXML
 	private Button one;
@@ -68,6 +69,7 @@ public class CalcController implements Initializable {
 
 	@FXML
 	void handleButtonAction(ActionEvent event) {
+
 		if (event.getSource() == one) {
 			display.setText(removeZero(display.getText() + "1"));
 		} else if (event.getSource() == two) {
@@ -154,6 +156,49 @@ public class CalcController implements Initializable {
 				break;
 			}
 		}
+	}
+
+	@FXML
+	public void keyPressed(KeyEvent e) {
+		if (e.getCode().equals(KeyCode.DIGIT1)) {
+			display.setText(removeZero(display.getText() + "1"));
+		} else if (e.getCode() == KeyCode.DIGIT2) {
+			display.setText(removeZero(display.getText() + "2"));
+		} else if (e.getCode() == KeyCode.DIGIT3) {
+			display.setText(removeZero(display.getText() + "3"));
+		} else if (e.getCode() == KeyCode.DIGIT4) {
+			display.setText(removeZero(display.getText() + "4"));
+		} else if (e.getCode() == KeyCode.DIGIT5) {
+			display.setText(removeZero(display.getText() + "5"));
+		} else if (e.getCode() == KeyCode.DIGIT6) {
+			display.setText(removeZero(display.getText() + "6"));
+		} else if (e.getCode() == KeyCode.DIGIT7) {
+			display.setText(removeZero(display.getText() + "7"));
+		} else if (e.getCode() == KeyCode.DIGIT8) {
+			display.setText(removeZero(display.getText() + "8"));
+		} else if (e.getCode() == KeyCode.DIGIT9) {
+			display.setText(removeZero(display.getText() + "9"));
+		} else if (e.getCode() == KeyCode.DIGIT0) {
+			display.setText(removeZero(display.getText() + "0"));
+		} else if (e.getCode() == KeyCode.PLUS) {
+			plus.fire();
+		} else if (e.getCode() == KeyCode.MINUS) {
+			subtract.fire();
+		} else if (e.getCode() == KeyCode.STAR) {
+			multiply.fire();
+		} else if (e.getCode() == KeyCode.SLASH) {
+			divide.fire();
+		} else if (e.getCode() == KeyCode.ENTER) {
+			equals.fire();
+		} else if (e.getCode() == KeyCode.BACK_SPACE) {
+			display.setText(removeLastCharacter(display.getText()));
+		}
+	}
+
+	public static String removeLastCharacter(String str) {
+		String result = Optional.ofNullable(str).filter(sStr -> sStr.length() != 0)
+				.map(sStr -> sStr.substring(0, sStr.length() - 1)).orElse(str);
+		return result;
 	}
 
 	private static double add(double num1, double num2) {
