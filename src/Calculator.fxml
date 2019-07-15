@@ -85,7 +85,7 @@
             </Button>
          </children>
       </GridPane>
-      <TextField fx:id="display" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="17.0" prefHeight="110.0" prefWidth="320.0" promptText="0" style="-fx-border-color: slateGray; -fx-border-width: 2;">
+      <TextField fx:id="display" layoutX="10.0" layoutY="17.0" prefHeight="110.0" prefWidth="320.0" promptText="0" style="-fx-border-color: slateGray; -fx-border-width: 2;">
          <font>
             <Font size="38.0" />
          </font>

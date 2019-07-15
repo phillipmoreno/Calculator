@@ -68,25 +68,25 @@ public class CalcController implements Initializable {
 	@FXML
 	void handleButtonAction(ActionEvent event) {
 		if (event.getSource() == one) {
-			display.setText(display.getText() + "1.0");
+			display.setText("1");
 		} else if (event.getSource() == two) {
-			display.setText(display.getText() + "2.0");
+			display.setText("2");
 		} else if (event.getSource() == three) {
-			display.setText(display.getText() + "3.0");
+			display.setText("3");
 		} else if (event.getSource() == four) {
-			display.setText(display.getText() + "4.0");
+			display.setText("4");
 		} else if (event.getSource() == five) {
-			display.setText(display.getText() + "5.0");
+			display.setText("5");
 		} else if (event.getSource() == six) {
-			display.setText(display.getText() + "6.0");
+			display.setText("6");
 		} else if (event.getSource() == seven) {
-			display.setText(display.getText() + "7.0");
+			display.setText("7");
 		} else if (event.getSource() == eight) {
-			display.setText(display.getText() + "8.0");
+			display.setText("8");
 		} else if (event.getSource() == nine) {
-			display.setText(display.getText() + "9.0");
+			display.setText("9");
 		} else if (event.getSource() == zero) {
-			display.setText(display.getText() + "0.0");
+			display.setText("0");
 		} else if (event.getSource() == clear) {
 			display.setText(" ");
 		} else if (event.getSource() == plus) {
