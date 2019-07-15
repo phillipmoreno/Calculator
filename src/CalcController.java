@@ -69,7 +69,7 @@ public class CalcController implements Initializable {
 	private Button decimal;
 
 	@FXML
-	private Button Negate;
+	private Button negate;
 
 	@FXML
 	private Button squared;
@@ -108,11 +108,20 @@ public class CalcController implements Initializable {
 			display.setText("0");
 		} else if (event.getSource() == decimal) {
 			display.setText(display.getText() + ".");
-
 		} else if (event.getSource() == backspace) {
 			display.setText(removeLastCharacter(display.getText()));
+		} else if (event.getSource() == squared) {
+			data = Double.parseDouble(display.getText());
+			double squaredNum = data * data;
+			if (squaredNum % 1.00 == 0.00)
+				display.setText(String.valueOf((int) squaredNum));
+			else
+				display.setText(String.valueOf((double) Math.round(squaredNum * 100000000000d) / 100000000000d));
+		} else if (event.getSource() == negate) {
+			data = Double.parseDouble(display.getText());
+			data = data * -1;
+			display.setText(String.valueOf(data));
 		} else if (event.getSource() == plus) {
-
 			data = Double.parseDouble(display.getText());
 			operator = 1;
 			display.setText("");

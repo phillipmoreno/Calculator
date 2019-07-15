@@ -69,9 +69,9 @@
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="clear" mnemonicParsing="false" onAction="#handleButtonAction" onKeyPressed="#keyPressed" prefHeight="118.0" prefWidth="80.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="CLEAR">
+            <Button fx:id="clear" mnemonicParsing="false" onAction="#handleButtonAction" onKeyPressed="#keyPressed" prefHeight="118.0" prefWidth="80.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="C">
                <font>
-                  <Font size="17.0" />
+                  <Font size="27.0" />
                </font>
             </Button>
             <Button fx:id="zero" mnemonicParsing="false" onAction="#handleButtonAction" onKeyPressed="#keyPressed" prefHeight="27.0" prefWidth="80.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4">
@@ -84,7 +84,7 @@
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button fx:id="Negate" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="132.0" prefWidth="79.0" style="-fx-border-color: slateGray;" text="±" GridPane.rowIndex="4">
+            <Button fx:id="negate" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="132.0" prefWidth="79.0" style="-fx-border-color: slateGray;" text="±" GridPane.rowIndex="4">
                <font>
                   <Font size="30.0" />
                </font>
@@ -96,7 +96,7 @@
             </Button>
             <Button fx:id="backspace" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="95.0" prefWidth="81.0" style="-fx-border-color: slateGray; -fx-border-width: 2;" text="⌫" GridPane.columnIndex="2">
                <font>
-                  <Font size="20.0" />
+                  <Font size="23.0" />
                </font>
             </Button>
          </children>
