@@ -77,13 +77,11 @@ public class CalcController implements Initializable {
 	@FXML
 	private Button backspace;
 
-	// Textfield object is created
 	@FXML
 	private TextField display;
 
 	@FXML
 	void handleButtonAction(ActionEvent event) {
-
 		if (event.getSource() == one) {
 			display.setText(removeZero(display.getText() + "1"));
 		} else if (event.getSource() == two) {
@@ -113,14 +111,18 @@ public class CalcController implements Initializable {
 		} else if (event.getSource() == squared) {
 			data = Double.parseDouble(display.getText());
 			double squaredNum = data * data;
-			if (squaredNum % 1.00 == 0.00)
+			if (squaredNum % 1.00 == 0.00) {
 				display.setText(String.valueOf((int) squaredNum));
-			else
+			} else {
 				display.setText(String.valueOf((double) Math.round(squaredNum * 100000000000d) / 100000000000d));
+			}
 		} else if (event.getSource() == negate) {
 			data = Double.parseDouble(display.getText());
 			data = data * -1;
-			display.setText(String.valueOf(data));
+			if (data % 1.00 == 0.00)
+				display.setText(String.valueOf((int) data));
+			else
+				display.setText(String.valueOf(data));
 		} else if (event.getSource() == plus) {
 			data = Double.parseDouble(display.getText());
 			operator = 1;
@@ -151,20 +153,17 @@ public class CalcController implements Initializable {
 					display.setText(String.valueOf((double) Math.round(ans * 100000000000d) / 100000000000d));
 				}
 				break;
-
 			case 2:
 				ans = 0;
 				ans = divide(data, secondOperand);
 				if (ans % 1.0 == 0.0) {
 					display.setText(String.valueOf((int) ans));
 				} else {
-
 					display.setText(String.valueOf((double) Math.round(ans * 100000000000d) / 100000000000d));
 				}
 				break;
 			case 3:
 				ans = 0;
-
 				ans = multiply(data, secondOperand);
 				if (ans % 1.0 == 0.0) {
 					display.setText(String.valueOf((int) ans));
@@ -174,9 +173,7 @@ public class CalcController implements Initializable {
 				break;
 			case 4:
 				ans = 0;
-
 				ans = subtract(data, secondOperand);
-
 				if (ans % 1.0 == 0.0) {
 					display.setText(String.valueOf((int) ans));
 				} else {
@@ -262,12 +259,10 @@ public class CalcController implements Initializable {
 			return aString;
 		} else
 			return bString;
-
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-
 	}
 }
