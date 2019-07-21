@@ -190,41 +190,41 @@ public class CalcController implements Initializable {
 
 	@FXML
 	public void keyPressed(KeyEvent e) {
-		if (e.getCode().equals(KeyCode.DIGIT1)) {
+		if (e.getCode().equals(KeyCode.DIGIT1) || e.getCode().equals(KeyCode.NUMPAD1)) {
 			display.setText(removeZero(display.getText() + "1"));
-		} else if (e.getCode() == KeyCode.DIGIT2) {
+		} else if (e.getCode().equals(KeyCode.DIGIT2) || e.getCode().equals(KeyCode.NUMPAD2)) {
 			display.setText(removeZero(display.getText() + "2"));
-		} else if (e.getCode() == KeyCode.DIGIT3) {
+		} else if (e.getCode().equals(KeyCode.DIGIT3) || e.getCode().equals(KeyCode.NUMPAD3)) {
 			display.setText(removeZero(display.getText() + "3"));
-		} else if (e.getCode() == KeyCode.DIGIT4) {
+		} else if (e.getCode().equals(KeyCode.DIGIT4) || e.getCode().equals(KeyCode.NUMPAD4)) {
 			display.setText(removeZero(display.getText() + "4"));
-		} else if (e.getCode() == KeyCode.DIGIT5) {
+		} else if (e.getCode().equals(KeyCode.DIGIT5) || e.getCode().equals(KeyCode.NUMPAD5)) {
 			display.setText(removeZero(display.getText() + "5"));
-		} else if (e.getCode() == KeyCode.DIGIT6) {
+		} else if (e.getCode().equals(KeyCode.DIGIT6) || e.getCode().equals(KeyCode.NUMPAD6)) {
 			display.setText(removeZero(display.getText() + "6"));
-		} else if (e.getCode() == KeyCode.DIGIT7) {
+		} else if (e.getCode().equals(KeyCode.DIGIT7) || e.getCode().equals(KeyCode.NUMPAD7)) {
 			display.setText(removeZero(display.getText() + "7"));
-		} else if (eightKey.match(e)) {
+		} else if (eightKey.match(e) || e.getCode().equals(KeyCode.NUMPAD8)) {
 			display.setText(removeZero(display.getText() + "8"));
-		} else if (e.getCode() == KeyCode.DIGIT9) {
+		} else if (e.getCode().equals(KeyCode.DIGIT9) || e.getCode().equals(KeyCode.NUMPAD9)) {
 			display.setText(removeZero(display.getText() + "9"));
-		} else if (e.getCode() == KeyCode.DIGIT0) {
+		} else if (e.getCode().equals(KeyCode.DIGIT0) || e.getCode().equals(KeyCode.NUMPAD0)) {
 			display.setText(removeZero(display.getText() + "0"));
-		} else if (e.getCode() == KeyCode.PLUS || shiftPlus.match(e)) {
+		} else if (e.getCode().equals(KeyCode.PLUS) || shiftPlus.match(e) || e.getCode().equals(KeyCode.ADD)) {
 			plus.fire();
-		} else if (e.getCode() == KeyCode.MINUS) {
+		} else if (e.getCode().equals(KeyCode.MINUS) || e.getCode().equals(KeyCode.SUBTRACT)) {
 			subtract.fire();
-		} else if (e.getCode() == KeyCode.MULTIPLY || shiftStar.match(e)) {
+		} else if (e.getCode().equals(KeyCode.MULTIPLY) || shiftStar.match(e)) {
 			multiply.fire();
-		} else if (e.getCode() == KeyCode.SLASH) {
+		} else if (e.getCode().equals(KeyCode.SLASH) || e.getCode().equals(KeyCode.DIVIDE)) {
 			divide.fire();
-		} else if (e.getCode() == KeyCode.ENTER || e.getCode() == KeyCode.EQUALS) {
+		} else if (e.getCode().equals(KeyCode.ENTER) || e.getCode().equals(KeyCode.EQUALS)) {
 			equals.fire();
-		} else if (e.getCode() == KeyCode.BACK_SPACE) {
+		} else if (e.getCode().equals(KeyCode.BACK_SPACE)) {
 			backspace.fire();
-		} else if (e.getCode() == KeyCode.C) {
+		} else if (e.getCode().equals(KeyCode.C)) {
 			clear.fire();
-		} else if (e.getCode() == KeyCode.PERIOD) {
+		} else if (e.getCode().equals(KeyCode.PERIOD) || e.getCode().equals(KeyCode.DECIMAL)) {
 			decimal.fire();
 		}
 	}
